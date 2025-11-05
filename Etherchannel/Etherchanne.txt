@@ -1,0 +1,128 @@
+Switch Configuration
+
+Switch>en
+Switch#conf ter
+Switch(config)#hostname sw1
+sw1(config)#interface range fastEthernet 0/1-2
+sw1(config-if-range)#switchport mode trunk
+sw1(config-if-range)#exit
+sw1(config)#interface range fastEthernet 0/3-4
+sw1(config-if-range)#switchport mode trunk
+sw1(config-if-range)#
+
+
+Switch>en
+Switch#conf ter
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname sw0
+sw0(config)#interface range fast
+sw0(config)#interface range fastEthernet 0/2-3
+sw0(config-if-range)#switch
+sw0(config-if-range)#switchport mo
+sw0(config-if-range)#switchport mode tr
+sw0(config-if-range)#switchport mode trunk 
+
+
+sw0(config-if-range)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+
+sw0(config-if-range)#exit
+sw0(config)#interfa
+sw0(config)#interface rang
+sw0(config)#interface range fast
+sw0(config)#interface range fastEthernet 02/-3
+                                            ^
+% Invalid input detected at '^' marker.
+	
+sw0(config)#interface range fastEthernet 0/2-3
+sw0(config-if-range)#shutdown
+
+
+sw0(config-if-range)#
+%LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+
+%LINK-5-CHANGED: Interface FastEthernet0/3, changed state to administratively down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to down
+
+sw0(config-if-range)#channel-group 1 mode active
+sw0(config-if-range)#
+Creating a port-channel interface Port-channel 1
+
+sw0(config-if-range)#no shutdown
+
+
+sw0(config-if-range)#
+%LINK-5-CHANGED: Interface FastEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/3, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+
+sw0(config-if-range)#exit
+sw0(config)#interface port-ch
+sw0(config)#interface port-channel 1
+sw0(config-if)#exit
+sw0(config)#interface range fastEthernet 0/4-5
+sw0(config-if-range)#switchport mode trunk
+
+
+sw0(config-if-range)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to up
+
+sw0(config-if-range)#shutdown
+
+
+sw0(config-if-range)#
+%LINK-5-CHANGED: Interface FastEthernet0/4, changed state to administratively down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to down
+
+%LINK-5-CHANGED: Interface FastEthernet0/5, changed state to administratively down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to down
+
+sw0(config-if-range)#channel-group 3 mode active
+sw0(config-if-range)#
+Creating a port-channel interface Port-channel 3
+
+sw0(config-if-range)#no shutdown
+
+
+sw0(config-if-range)#
+%LINK-5-CHANGED: Interface FastEthernet0/4, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+
+%LINK-5-CHANGED: Interface FastEthernet0/5, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to up
+
+sw0(config-if-range)#exit
+sw0(config)#port
+sw0(config)#port-channel 3
+                         ^
+% Invalid input detected at '^' marker.
+	
+sw0(config)#interface port
+sw0(config)#interface port-channel 
+% Incomplete command.
+sw0(config)#interface port-channel 3
+sw0(config-if)#exit
+sw0(config)#

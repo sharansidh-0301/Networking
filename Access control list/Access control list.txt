@@ -1,0 +1,20 @@
+
+Router>en
+Router#conf ter
+Router(config)#ip access-list standard 10
+Router(config-std-nacl)#permit 192.168.1.1 255.255.255.0
+Router(config-std-nacl)#permit 192.168.1.2 255.255.255.0
+Router(config-std-nacl)#no permit 192.168.1.2 255.255.255.0
+Router(config-std-nacl)#permit 192.168.2.1 255.255.255.0
+Router(config-std-nacl)#deny 192.168.1.2 255.255.255.0
+Router(config-std-nacl)#deny 192.168.2.2 255.255.255.0
+Router(config-std-nacl)#exit
+Router(config)#interface serial 0/1/0
+Router(config-if)#ip access-group 10 out
+Router(config-if)#exit
+Router(config)#
+
+
+
+
+Router#show running-config

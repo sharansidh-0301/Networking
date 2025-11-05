@@ -1,0 +1,12 @@
+
+DHCP AUTO IP Config
+Router>en
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip dhcp pool lan
+Router(dhcp-config)#net 192.168.1.0 255.255.255.0
+Router(dhcp-config)#default-router 192.168.1.254
+Router(dhcp-config)#exit
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#ip address 192.168.1.254 255.255.255.0
+Router(config-if)#no shutdown

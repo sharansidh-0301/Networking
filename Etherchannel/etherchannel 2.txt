@@ -1,0 +1,8 @@
+
+Switch>en
+Switch#conf ter
+Switch(config-if-range)#interface range fastEthernet 0/2-3
+Switch(config-if-range)#no switchport 
+Switch(config-if-range)#no ip address 
+Switch(config-if-range)#channel-protocol lacp
+Switch(config-if-range)#channel-group 1 mode active
